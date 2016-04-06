@@ -1,0 +1,29 @@
+
+.img-wrap {
+	/*background: url(https://abbottandmosley.com/wp-content/uploads/2015/05/white-marble-2048.jpg) no-repeat center center fixed; 
+	background-size: cover;
+	height:100%;*/
+}
+
+body {
+		font-family: courier;
+}
+
+.navbar {
+	background: transparent;
+	/*border-bottom: 2px solid #eeeeee;*/
+	font-family: courier;
+}
+
+.navbar a { color: #212121; font-size:24;}
+
+ul.nav a:hover { opacity: .2;   background-color: transparent; }
+
+.intro {
+	padding-top: 0px;
+	color: white;
+}
+
+.portfolio-item {
+    margin-bottom: 25px;
+}

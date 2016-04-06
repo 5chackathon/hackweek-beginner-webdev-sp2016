@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<!-- This is what a comment looks like ! They won't ruin your website. Use them to keep stuff organized -->
+<html lang="en">
+
+
+<!--The <head> tag is used for your computer to find important files such as style sheets/scripts -->
+<head>
+
+  <!-- Check the top tab of your page ! -->
+  <title>Hi</title>
+
+  <!--
+        "Find the refence to Bootstrap's stylesheet | This is a style sheet."
+
+        Note that why bootstrap is so convenient is that it includes PRE-STYLED
+        elements and layouts for you to use.  This file should never be modified.
+        Instead, you can override Bootstrap styles in your custom .css file.
+  -->
+  <link href="bootstrap.css" rel="stylesheet">
+
+  <!-- Our custom CSS ! -->
+  <link href="style.css" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+  <script src="jquery.philter.min.js">
+
+  </script>
+
+<!-- Be sure to close every open tag ! -->
+</head>
+
+
+<!-- The <body> is where all the magic happens -->
+<body class="img-wrap">
+ <!-- <div class="img-wrap"> -->
+ <nav class="navbar">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Cat Filter</a>
+      </div>
+      <div id="navbar">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+ <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Header -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Filters</h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-6 portfolio-item">
+                <a href="#">
+                  <div class="img-filter">
+                      <img class="img-responsive" src="http://placekitten.com/700/400" alt="">
+                    </div>
+
+                </a>
+                <h3>
+                    <a href="item1.html">Project One</a>
+                </h3>
+                <p>Cronut deep v chia actually. Cardigan pork belly microdosing blog, umami roof party 3 wolf moon shoreditch pinterest marfa man braid gastropub. Try-hard tote bag gluten-free, direct trade forage twee before they sold out.</p>
+            </div>
+            <div class="col-md-6 portfolio-item">
+                <a href="#">
+                  <div class="img-filter">
+                    <img class="img-responsive" src="http://placekitten.com/700/400" alt="">
+                  </div>
+                </a>
+                <h3>
+                    <a href="#">Project Two</a>
+                </h3>
+                <p>Blog you probably haven't heard of them jean shorts, cardigan direct trade mumblecore </p>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-6 portfolio-item">
+                <a href="#">
+                  <div class="img-filter">
+                    <img class="img-responsive" src="http://placekitten.com/700/400" alt="">
+                  </div>
+                </a>
+                <h3>
+                    <a href="#">Project Three</a>
+                </h3>
+                <p>franzen cronut single-origin coffee deep v everyday carry chicharrones four dollar toast. Food truck chillwave</p>
+            </div>
+            <div class="col-md-6 portfolio-item">
+                <a href="#">
+                  <div class="img-filter">
+                    <img class="img-responsive" src="http://placekitten.com/700/400" alt="">
+                  </div>
+                </a>
+                <h3>
+                    <a href="#">Project Four</a>
+                </h3>
+                <p>banjo messenger bag yr drinking vinegar keytar beard selfies, flannel chicharrones. </p>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-6 portfolio-item">
+                <a href="#">
+                  <div class="img-filter">
+                    <img class="img-responsive" src="http://placekitten.com/700/400" alt="">
+                  </div>
+                </a>
+                <h3>
+                    <a href="#">Project Five</a>
+                </h3>
+                <p>Cray irony scenester, wolf pop-up slow-carb microdosing kickstarter cronut hashtag umami twee direct trade polaroid</p>
+            </div>
+            <div class="col-md-6 portfolio-item">
+                <a href="#">
+                  <div class="img-filter">
+                    <img class="img-responsive" src="http://placekitten.com/700/400" alt="">
+                  </div>
+                </a>
+                <h3>
+                    <a href="#">Project Six</a>
+                </h3>
+                <p> Lo-fi roof party echo park wayfarers before they sold out selvage. Offal chambray everyday carry wayfarers, cardigan jean shorts beard waistcoat </p>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Pagination -->
+        <div class="row text-center">
+            <div class="col-lg-12">
+              <button type="button" class="btn btn-primary btn-lg" id="refresh" >Refresh</button>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+<!-- </div> -->
+
+<script type="text/javascript">
+  $(document).ready(function() {
+
+    /*
+     * for each image-fitler div, apply a random filter using
+     * hue-rotation, contrast, saturation, brigtness, and vintage filters
+     */
+    $('.img-filter').each(function() {
+      $(this).attr("data-philter-hue-rotate", randomNumber(1, 40));
+      $(this).attr("data-philter-contrast", randomNumber(1, 300));
+      $(this).attr("data-philter-saturate", randomNumber(1, 300));
+      $(this).attr("data-philter-brightness", randomNumber(1, 300));
+      $(this).attr("data-philter-vintage", randomNumber(1, 6));
+    });
+
+    // initialize philter js so it actually applies our filters
+    $.philter();
+
+    // toggle (aka remove) an item if you click on it
+    $('.portfolio-item').click(function() {
+         $(this).toggle(1000);
+    });
+
+    /*
+    * Reload the entire page (causing new filters and images to be loaded)
+    * upon click of the refresh button
+    */
+    $("#refresh").click(function() {
+      location.reload();
+    });
+  });
+
+  /*
+  * A simple random number function that generates a random
+  * number in the range [lowerBound, upperBound]
+  */
+  function randomNumber(lowerBound, upperBound) {
+    return Math.floor((Math.random() * upperBound) + lowerBound);
+  }
+</script>
+</body>
+
+</html>
