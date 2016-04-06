@@ -20,12 +20,6 @@
 
   <!-- Our custom CSS ! -->
   <link href="style.css" rel="stylesheet">
-
-  <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
-  <script src="jquery.philter.min.js">
-
-  </script>
-
 <!-- Be sure to close every open tag ! -->
 </head>
 
@@ -63,11 +57,9 @@
         <div class="row">
             <div class="col-md-6 portfolio-item">
                 <a href="#">
-                  <div class="img-filter">
-                      <img class="img-responsive" src="http://placekitten.com/700/400" alt="">
-                    </div>
-
+                  <img class="img-responsive" src="http://placekitten.com/700/400" alt="">
                 </a>
+
                 <h3>
                     <a href="item1.html">Project One</a>
                 </h3>
@@ -75,9 +67,7 @@
             </div>
             <div class="col-md-6 portfolio-item">
                 <a href="#">
-                  <div class="img-filter">
-                    <img class="img-responsive" src="http://placekitten.com/700/400" alt="">
-                  </div>
+                  <img class="img-responsive" src="http://placekitten.com/700/400" alt="">
                 </a>
                 <h3>
                     <a href="#">Project Two</a>
@@ -91,9 +81,7 @@
         <div class="row">
             <div class="col-md-6 portfolio-item">
                 <a href="#">
-                  <div class="img-filter">
-                    <img class="img-responsive" src="http://placekitten.com/700/400" alt="">
-                  </div>
+                  <img class="img-responsive" src="http://placekitten.com/700/400" alt="">
                 </a>
                 <h3>
                     <a href="#">Project Three</a>
@@ -102,9 +90,7 @@
             </div>
             <div class="col-md-6 portfolio-item">
                 <a href="#">
-                  <div class="img-filter">
-                    <img class="img-responsive" src="http://placekitten.com/700/400" alt="">
-                  </div>
+                  <img class="img-responsive" src="http://placekitten.com/700/400" alt="">
                 </a>
                 <h3>
                     <a href="#">Project Four</a>
@@ -118,9 +104,7 @@
         <div class="row">
             <div class="col-md-6 portfolio-item">
                 <a href="#">
-                  <div class="img-filter">
-                    <img class="img-responsive" src="http://placekitten.com/700/400" alt="">
-                  </div>
+                  <img class="img-responsive" src="http://placekitten.com/700/400" alt="">
                 </a>
                 <h3>
                     <a href="#">Project Five</a>
@@ -129,9 +113,7 @@
             </div>
             <div class="col-md-6 portfolio-item">
                 <a href="#">
-                  <div class="img-filter">
-                    <img class="img-responsive" src="http://placekitten.com/700/400" alt="">
-                  </div>
+                  <img class="img-responsive" src="http://placekitten.com/700/400" alt="">
                 </a>
                 <h3>
                     <a href="#">Project Six</a>
@@ -155,46 +137,5 @@
 
 <!-- </div> -->
 
-<script type="text/javascript">
-  $(document).ready(function() {
-
-    /*
-     * for each image-fitler div, apply a random filter using
-     * hue-rotation, contrast, saturation, brigtness, and vintage filters
-     */
-    $('.img-filter').each(function() {
-      $(this).attr("data-philter-hue-rotate", randomNumber(1, 40));
-      $(this).attr("data-philter-contrast", randomNumber(1, 300));
-      $(this).attr("data-philter-saturate", randomNumber(1, 300));
-      $(this).attr("data-philter-brightness", randomNumber(1, 300));
-      $(this).attr("data-philter-vintage", randomNumber(1, 6));
-    });
-
-    // initialize philter js so it actually applies our filters
-    $.philter();
-
-    // toggle (aka remove) an item if you click on it
-    $('.portfolio-item').click(function() {
-         $(this).toggle(1000);
-    });
-
-    /*
-    * Reload the entire page (causing new filters and images to be loaded)
-    * upon click of the refresh button
-    */
-    $("#refresh").click(function() {
-      location.reload();
-    });
-  });
-
-  /*
-  * A simple random number function that generates a random
-  * number in the range [lowerBound, upperBound]
-  */
-  function randomNumber(lowerBound, upperBound) {
-    return Math.floor((Math.random() * upperBound) + lowerBound);
-  }
-</script>
 </body>
-
 </html>
