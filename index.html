@@ -20,9 +20,9 @@
 
   <!-- Our custom CSS ! -->
   <link href="style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cssgram-cssgram.netdna-ssl.com/cssgram.min.css">
 
   <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
-  <script src="jquery.philter.min.js">
 
   </script>
 
@@ -64,10 +64,9 @@
             <div class="col-md-6 portfolio-item">
 
                   <div class="img-filter">
-                      <img class="img-responsive" src="http://placekitten.com/700/400" alt="">
+                      <img class="img-responsive" src="http://lorempixel.com/700/400" alt="">
                     </div>
 
-                
                 <h3>
                     <a href="item1.html">Project One</a>
                 </h3>
@@ -76,7 +75,7 @@
             <div class="col-md-6 portfolio-item">
 
                   <div class="img-filter">
-                    <img class="img-responsive" src="http://placekitten.com/700/400" alt="">
+                    <img class="img-responsive" src="http://lorempixel.com/700/400" alt="">
                   </div>
 
                 <h3>
@@ -92,7 +91,7 @@
             <div class="col-md-6 portfolio-item">
 
                   <div class="img-filter">
-                    <img class="img-responsive" src="http://placekitten.com/700/400" alt="">
+                    <img class="img-responsive" src="http://lorempixel.com/700/400" alt="">
                   </div>
 
                 <h3>
@@ -103,7 +102,7 @@
             <div class="col-md-6 portfolio-item">
 
                   <div class="img-filter">
-                    <img class="img-responsive" src="http://placekitten.com/700/400" alt="">
+                    <img class="img-responsive" src="http://lorempixel.com/700/400" alt="">
                   </div>
 
                 <h3>
@@ -119,7 +118,7 @@
             <div class="col-md-6 portfolio-item">
 
                   <div class="img-filter">
-                    <img class="img-responsive" src="http://placekitten.com/700/400" alt="">
+                    <img class="img-responsive" src="http://lorempixel.com/700/400" alt="">
                   </div>
                 <h3>
                     <a href="#">Project Five</a>
@@ -129,7 +128,7 @@
             <div class="col-md-6 portfolio-item">
 
                   <div class="img-filter">
-                    <img class="img-responsive" src="http://placekitten.com/700/400" alt="">
+                    <img class="img-responsive" src="http://lorempixel.com/700/400" alt="">
                   </div>
 
                 <h3>
@@ -156,21 +155,17 @@
 
 <script type="text/javascript">
   $(document).ready(function() {
+    filters = ["aden", "reyes", "perpetua", "inkwell", "toaster", "walden", "hudson", "gingham",
+                "mayfair", "lofi", "xpro2", "_1977", "brooklyn", "nashville", "lark", "moon",
+                "clarendon", "willow"];
 
     /*
      * for each image-fitler div, apply a random filter using
      * hue-rotation, contrast, saturation, brigtness, and vintage filters
      */
-    $('.img-filter').each(function() {
-      $(this).attr("data-philter-hue-rotate", randomNumber(1, 40));
-      $(this).attr("data-philter-contrast", randomNumber(1, 300));
-      $(this).attr("data-philter-saturate", randomNumber(1, 300));
-      $(this).attr("data-philter-brightness", randomNumber(1, 300));
-      $(this).attr("data-philter-vintage", randomNumber(1, 6));
+    $('.img-responsive').each(function() {
+      $(this).addClass(filters[randomNumber(0, filters.length)]);
     });
-
-    // initialize philter js so it actually applies our filters
-    $.philter();
 
     // toggle (aka remove) an item if you click on it
     $('.portfolio-item').click(function() {
